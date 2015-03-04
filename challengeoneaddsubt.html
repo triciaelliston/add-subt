@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="challengeoneaddsubt.css">
+	<title>This is a Test</title>
+	<script>
+	function myFunction(operation) {
+		//var f=document.forms[0];
+		//var x=f.X.value
+		//var y=f.Y.value
+		var z=0
+		var text = ""
+		
+		// Get the value of the input fields with id="X" and id="Y"
+    	var x = document.getElementById("X").value;
+    	var y = document.getElementById("Y").value;
+		//alert("inside if" + x);
+		//alert("inside if" + y);
+
+    	// If x or y are Not Number s
+ 	    if ( isNaN(x) || isNaN(y) ) {
+ 	    	//alert("inside if");
+        	text = "Input not valid";
+        	document.getElementById("answer").innerHTML = text;
+    	} else {
+			if ( operation == 'add' ) {
+				//alert("inside add");
+				var z = (x * 1) + (y * 1);
+				document.getElementById("answer").innerHTML = x + " plus " + y + " is " + z;
+				//alert("inside add");
+			}
+			else {
+				//alert("inside subt");
+				var z = (x * 1) - (y * 1);
+				document.getElementById("answer").innerHTML = x + " minus " + y + " is " + z;
+				//alert("inside subt");
+			}
+			
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<form>
+		<div class="main">
+			<h2>Adder/Subtractor</h2>
+			<div>X  =   
+			<input type="text" id="X" name="X" placeholder="Enter an Integer" required/>
+			</div>
+			<div>Y  =  
+			<input type="text" id="Y" name="Y" placeholder="Enter an Integer" required/>
+			</div>
+			<button type="button" onclick="myFunction('add')">
+				<strong>+</strong>
+			</button>
+			<button type="button" onclick="myFunction('subt');">
+				<strong>-</strong>
+			</button>
+			<div id="answer">X minus / plus Y is Z</div>
+			<p></p>
+		</div>
+	</form>
+</body>
+</html>
